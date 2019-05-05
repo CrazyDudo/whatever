@@ -27,11 +27,9 @@ public class AppApplication extends Application {
         JPushInterface.init(this);
         JMessageClient.init(this);
         JMessageClient.registerEventReceiver( new GlobalEventListener(this));
-
     }
 
     public static Application getContext() {
         return mApplication;
     }
-
 }
