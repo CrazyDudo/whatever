@@ -2,35 +2,60 @@ package com.crazyduo.whatever.dagger2;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
-import com.crazyduo.whatever.AppApplication;
 import com.crazyduo.whatever.R;
 
 import javax.inject.Inject;
 
 public class TestActivity extends AppCompatActivity {
     private static final String TAG = "TestActivity";
-    @Inject
-    Test test;
+
+//    @QualifierA
+//    @Inject Phone phoneA;
+//    @QualifierB
+//    @Inject Phone phoneB;
+
+//
+//    @Inject
+//    Car test;
+//
+//    @Inject
+//    Car test1;
 
     @Inject
-    Test test1;
+    Phone phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger_test);
-//        DaggerTestActivityComponent.builder().build().inject(this);
-//        test.move();
-        DaggerTestActivityComponent.builder()
-                .testModule(new TestModule((AppApplication) getApplication()))
-                .build()
-                .inject(this);
-        test.move();
-        Log.d(TAG, "onCreate: "+test);
-        Log.d(TAG, "onCreate: "+test1);
+        carTest();
+        phoneTest();
     }
 
+    private void phoneTest() {
+        DaggerPhoneComponent.builder()
+                .phoneModule(new PhoneModule())
+                .build()
+                .inject(this);
+
+        phone.printPhoneName();
+
+
+    }
+
+
+    private void carTest() {
+        //        DaggerCarComponent.builder().build().inject(this);
+//        test.move();
+//        DaggerCarComponent.builder()
+//                .carModule(new CarModule((AppApplication) getApplication()))
+//                .build()
+//                .inject(this);
+//        test.move();
+//        Log.d(TAG, "onCreate: " + test);
+//        Log.d(TAG, "onCreate: " + test1);
+
+    }
 
 }

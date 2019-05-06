@@ -11,10 +11,10 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class TestModule  {
+public class CarModule {
     private final AppApplication application;
 
-    public TestModule(AppApplication application) {
+    public CarModule(AppApplication application) {
         this.application = application;
     }
 
@@ -26,8 +26,8 @@ public class TestModule  {
 
     @Provides
     @Singleton
-    Test provideTest() {
-        return  new Test(application);
+    Car provideCar() {
+        return  new Car(application);
     }
 
     @Provides
