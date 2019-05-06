@@ -7,9 +7,12 @@ class Car {
     @Inject
     Engine engineA;
 
-    @QualifierB
+    @QualifierA
     @Inject
     Engine engineB;
+//    @QualifierB
+//    @Inject
+//    Engine engineB;
 
 
     public Car() {

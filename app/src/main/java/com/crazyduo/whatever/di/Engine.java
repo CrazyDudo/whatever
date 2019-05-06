@@ -8,6 +8,8 @@ public class Engine {
     String type;
 
     public Engine(String type) {
+
+        Log.d(TAG, "Create Engine");
         this.type = type;
     }
 

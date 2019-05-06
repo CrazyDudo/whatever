@@ -17,8 +17,11 @@ public class TestActivity extends AppCompatActivity {
 
     private void carTest() {
         Car car = new Car();
-        car.getEngineA().run();
-        car.getEngineB().run();
+//        car.getEngineA().run();
+//        car.getEngineB().run();
+
+        System.out.println(car.engineA.hashCode());
+        System.out.println(car.engineB.hashCode());
     }
 
 }

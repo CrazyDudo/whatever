@@ -10,13 +10,14 @@ public class MarkCarModule {
 
     @QualifierA
     @Provides
+    @CarScope
     Engine provideEngineA(){
         return new Engine("gearA");
     }
 
     @QualifierB
     @Provides
-    Engine provideEnginB() {
+    Engine provideEngineB() {
         return new Engine("gearB");
     }
 }
