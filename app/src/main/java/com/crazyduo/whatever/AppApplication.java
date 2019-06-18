@@ -1,23 +1,30 @@
 package com.crazyduo.whatever;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.crazyduo.whatever.greendao.GreenDaoManager;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 
 public class AppApplication extends Application {
-    private static Application mApplication;
+    private static Context context;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        mApplication=this;
+        context = getApplicationContext();
         init();
     }
 
     private void init() {
+        Logger.addLogAdapter(new AndroidLogAdapter());
         //GreenDao的初始化
         GreenDaoManager.getInstance();
+
     }
-    public static Application getContext() {
-        return mApplication;
+
+    public static Context getContext() {
+        return context;
     }
 }

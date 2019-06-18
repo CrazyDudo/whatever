@@ -2,16 +2,18 @@ package com.crazyduo.whatever.greendao;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.crazyduo.whatever.R;
 import com.crazyduo.whatever.greendao.entity.User;
+import com.crazyduo.whatever.greendao.gen.UserDao;
 import com.crazyduo.whatever.greendao.helper.UserHelper;
+import com.orhanobut.logger.Logger;
 
-import java.util.Collections;
+import org.greenrobot.greendao.query.QueryBuilder;
+
 import java.util.List;
 import java.util.Random;
 
@@ -20,7 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class GreenDaoTestActivity extends AppCompatActivity {
-    private static final String TAG = "GreenDaoTestActivity";
+
     @BindView(R.id.btn_add)
     Button btnAdd;
     @BindView(R.id.btn_delete)
@@ -59,7 +61,7 @@ public class GreenDaoTestActivity extends AppCompatActivity {
                 user.setMemberId(123456);
 
                 long insert = userHelper.getUserDao().insert(user);
-                Log.d(TAG, "onViewClicked:=== " + insert);
+                Logger.d( "onViewClicked:=== " + insert);
                 break;
             case R.id.btn_delete:
                 userHelper.getUserDao().deleteAll();
@@ -71,11 +73,16 @@ public class GreenDaoTestActivity extends AppCompatActivity {
                 userHelper.getUserDao().update(user);
                 break;
             case R.id.btn_query:
+                userHelper.getUserDao().detachAll();
                 userList = userHelper.getUserDao().loadAll();
+//                Collections.reverse(userList);
+//                Logger.d(userList.get(0).getId());
 
-                Collections.reverse(userList);
-                tv.setText(userList.get(0).getId().toString());
-                Log.d(TAG, "onViewClicked: "+userHelper.getUserDao().loadAll().get(userList.size()-1).getId());
+                QueryBuilder<User> qb = userHelper.getUserDao().queryBuilder().orderDesc(UserDao.Properties.Id).limit(1);    //invert list
+                User unique = qb.build().unique();
+
+                tv.setText(unique.getId().toString());
+                Logger.d(unique.getId());
                 break;
         }
     }
