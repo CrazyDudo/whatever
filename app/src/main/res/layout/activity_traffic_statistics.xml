@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".statistics.trafficStatisticsActivity">
+
+
+    <EditText
+        android:id="@+id/edt_package_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="input package name" />
+
+    <Button
+        android:id="@+id/btn_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="data statistics" />
+
+    <Button
+        android:id="@+id/btn_battery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="battery statistics" />
+</LinearLayout>
