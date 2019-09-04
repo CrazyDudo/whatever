@@ -2,10 +2,12 @@ package com.crazyduo.whatever.handler;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crazyduo.whatever.R;
 
@@ -98,7 +100,19 @@ public class ThreadActivity extends AppCompatActivity {
     public void onViewClicked() {
 //        updateUI4();
 //        updateUI1();
-        updateUI2();
+//        updateUI2();
+        toastInThread();
+    }
+
+    private void toastInThread() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Looper.prepare();
+                Toast.makeText(ThreadActivity.this, "toastInThread", Toast.LENGTH_SHORT).show();
+                Looper.loop();
+            }
+        }).start();
     }
 
 
@@ -178,5 +192,11 @@ public class ThreadActivity extends AppCompatActivity {
             }
         }).start();
 
+
     }
+
+
+
 }
+
+
