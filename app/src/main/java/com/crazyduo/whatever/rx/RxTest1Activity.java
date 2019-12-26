@@ -64,7 +64,7 @@ public class RxTest1Activity extends AppCompatActivity {
 
                     @Override
                     public void onNext(Long aLong) {
-                        Log.d(TAG, "onNext: "+aLong.toString());
+                        Log.d(TAG, "onNext: " + aLong.toString());
                         try {
                             Thread.sleep(100);
                         } catch (InterruptedException e) {
@@ -131,7 +131,6 @@ public class RxTest1Activity extends AppCompatActivity {
                     }
                 });
     }
-
 
     private void test2() {
         Observable.just("filepath")

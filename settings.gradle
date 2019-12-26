@@ -1,1 +1,1 @@
-include ':app', ':jmessage'
+include ':app'

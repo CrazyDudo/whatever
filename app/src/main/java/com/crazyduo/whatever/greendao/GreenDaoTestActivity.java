@@ -46,6 +46,7 @@ public class GreenDaoTestActivity extends AppCompatActivity {
         userHelper = new UserHelper();
 
         user = new User();
+
     }
 
     @OnClick({R.id.btn_add, R.id.btn_delete, R.id.btn_update, R.id.btn_query})
@@ -61,7 +62,7 @@ public class GreenDaoTestActivity extends AppCompatActivity {
                 user.setMemberId(123456);
 
                 long insert = userHelper.getUserDao().insert(user);
-                Logger.d( "onViewClicked:=== " + insert);
+                Logger.d("onViewClicked:=== " + insert);
                 break;
             case R.id.btn_delete:
                 userHelper.getUserDao().deleteAll();

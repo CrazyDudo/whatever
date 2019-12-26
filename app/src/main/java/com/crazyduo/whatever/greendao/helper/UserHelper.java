@@ -6,13 +6,11 @@ import com.crazyduo.whatever.greendao.gen.UserDao;
 
 public class UserHelper {
 
-    public UserDao getUserDao()
-    {
+    public UserDao getUserDao() {
         return GreenDaoManager.getInstance().getmDaoSession().getUserDao();
     }
 
-    public User getUser(Long id)
-    {
+    public User getUser(Long id) {
         return getUserDao().load(id);
     }
 }
