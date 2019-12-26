@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao' // apply plugin
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'// apply plugin
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -50,4 +52,5 @@ dependencies {
     //okgo
     implementation 'com.lzy.net:okgo:3.0.4'
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

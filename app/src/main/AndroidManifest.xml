@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-
-    package="com.crazyduo.whatever"
-   >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.crazyduo.whatever">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 两种provider的权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 仅网络定位的权限 -->
@@ -14,8 +11,6 @@
         android:name="android.hardware.nfc"
         android:required="true" />
 
-
-
     <application
         android:name=".AppApplication"
         android:allowBackup="true"
@@ -24,13 +19,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Main4Activity"></activity>
+        <activity android:name=".Main3Activity" />
         <activity android:name=".handler.ThreadActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".nfc.NfcActivity"
@@ -58,7 +56,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity android:name=".okgo.OkgoTestActivity">
 
             <!-- <intent-filter> -->
