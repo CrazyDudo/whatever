@@ -86,7 +86,6 @@ public class ThreadPool {
                 System.out.println("delay 1s, period 3s,  " + i);
             }
         }, 1, 3, TimeUnit.SECONDS);
-
     }
 
     private static void singleThreadPool() {

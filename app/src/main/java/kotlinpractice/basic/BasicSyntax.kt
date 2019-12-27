@@ -1,5 +1,8 @@
+import kotlin.math.sqrt
+
 /**
  * Created by ruandong on 2019/12/26.
+ *
  * https://www.kotlincn.net/docs/reference/basic-syntax.html
  * https://huanglizhuo.gitbooks.io/kotlin-in-chinese/content/GettingStarted/Basic-Syntax.html
  */
@@ -107,9 +110,34 @@ fun filter() {
 }
 
 
+//创建基本类及其实例
+abstract class Shape(val sides: List<Double>) {
+
+    val perimeter: Double get() = sides.sum()
+    abstract fun caculateArea(): Double
+}
+
+class Rectangle(var height: Double, var length: Double) : Shape(listOf(height, length, height, length)) {
+    override fun caculateArea(): Double = height * length
+}
+
+class Triangle(var sideA: Double, var sideB: Double, var sideC: Double) : Shape(listOf(sideA, sideB, sideC)) {
+    override fun caculateArea(): Double {
+        val p = perimeter / 2
+        return sqrt(p * (p - sideA) * (p - sideB) * (p - sideC))
+    }
+}
 
 fun main() {
-    filter()
+    var rectangle = Rectangle(2.0, 3.0)
+    println("rectangle周长是==${rectangle.perimeter}")
+    println("rectangle面积是==${rectangle.caculateArea()}")
+
+    var triangle = Triangle(3.0, 4.0, 5.0)
+    println("triangle周长是==${triangle.perimeter}")
+    println("triangle面积是==${triangle.caculateArea()}")
+
+//    filter()
 //    controlFlow()
 //    range()
 //    var x:Any = 0
