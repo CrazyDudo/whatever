@@ -1,5 +1,9 @@
 package kotlinpractice.basic
 
+
+import java.nio.file.Files
+import java.nio.file.Paths
+
 /**
  * Created by ruandong on 2019/12/27.
  *
@@ -12,8 +16,6 @@ fun filterList() {
     val list = listOf(1, 2, 3, 45, 5, 99, 5, 77, 4, 44, 55, 4, 4, 868)
     val liststr = listOf("aa", "bb", "cc", 1, 2, 3, 45, 5, 99, 5, 77, 4, 44, 55, 4, 4, 868)
     val x = list.filter { it > 20 }
-
-
     println(x)
 
     if ("cc" in liststr) {
@@ -31,11 +33,9 @@ fun filterList() {
     map[2] = 22
     map[3] = 33
 
-
     for ((k, v) in map) {
         println("$k--->$v")
     }
-
 }
 
 fun String.print() {
@@ -70,9 +70,96 @@ fun transform(i: Int): String {
 }
 
 
+fun test() {
+
+    val result = try {
+        count()
+    } catch (e: ArithmeticException) {
+    }
+    println(result)
+}
+
+fun count() {
+    println(1 + 8)
+}
+
+fun foo(params: Int) {
+    val result = if (params == 1) {
+        "one"
+    } else if (params == 2) {
+
+        "tow"
+    } else {
+        "three"
+    }
+
+    print(result)
+}
+
+
+fun arrayOfMinusOnes(size: Int): IntArray {
+    return IntArray(size).apply { fill(-1) }
+}
+
+const val a = 55
+fun theAnswer() = a
+fun theAnswer1() = 22
+
+class Baymax() {
+
+    fun charge() {
+        println("charge")
+    }
+
+    fun move() {
+        println("move")
+    }
+
+    fun sleep() {
+        println("sleep")
+    }
+
+}
+
+class Rectangle() {
+
+    var height: Int = 0
+    var length: Int = 0
+
+}
+
+fun readFiles() {
+
+    val stream = Files.newInputStream(Paths.get("file.txt"))
+
+    stream.buffered().reader().use { reader-> println(reader.readText()) }
+
+}
+
 fun main() {
 
-println(transform(2))
+
+    readFiles()
+
+//    val rectangle = Rectangle().apply {
+//        height = 10
+//        length = 20
+//    }
+//    println(rectangle.height)
+//    println(rectangle.length)
+//    val baymax = Baymax()
+//    with(baymax) {
+//        charge()
+//        move()
+//        sleep()
+//    }
+
+//    print(theAnswer1())
+//    print(theAnswer())
+//    arrayOfMinusOnes(4)
+//    foo(4)
+//    test()
+//    println(transform(2))
 //    nullCheck(151515)
 //    exFunc()
 //    filterList()
@@ -80,6 +167,7 @@ println(transform(2))
 //    var user1 = User1("user1", 19)
 //    user1.name = "jj"
 }
+
 
 
 
