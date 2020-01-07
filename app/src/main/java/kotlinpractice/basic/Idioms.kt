@@ -4,6 +4,7 @@ package kotlinpractice.basic
 import java.math.BigDecimal
 import java.nio.file.Files
 import java.nio.file.Paths
+import kotlin.math.abs
 
 /**
  * Created by ruandong on 2019/12/27.
@@ -167,9 +168,24 @@ fun todo() {
     print(calcTaxes())
 }
 
+fun catAndMose(x: Int, y: Int, z: Int): String {
+    val dalt = abs(x - z) - abs(y - z)
+    return when {
+        dalt > 0 -> {
+            "Cat B"
+        }
+        dalt < 0 -> {
+            "Cat A"
+        }
+        else -> {
+            "Mouse C"
+        }
+    }
+}
 
 fun main() {
 
+    catAndMose(1,2,3).print()
 //    todo()
 //    changeValue()
 //    nullable()
