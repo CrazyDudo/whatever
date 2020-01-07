@@ -1,6 +1,7 @@
 package kotlinpractice.basic
 
 
+import java.math.BigDecimal
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -118,29 +119,61 @@ class Baymax() {
     fun sleep() {
         println("sleep")
     }
-
 }
 
 class Rectangle() {
-
     var height: Int = 0
     var length: Int = 0
-
 }
 
 fun readFiles() {
 
-    val stream = Files.newInputStream(Paths.get("file.txt"))
-
-    stream.buffered().reader().use { reader-> println(reader.readText()) }
-
+    //    val stream = Files.newInputStream(Paths.get("G:\\AndroidStudioProjects\\github\\iprojects\\whatever\\app\\src\\main\\java\\kotlinpractice\\basic\\file2.txt"))
+//    val stream = Files.newInputStream(Paths.get("app/src/some/file.txt"))
+    val stream = Files.newInputStream(Paths.get("app/src/main/java/kotlinpractice/basic/file2.txt"))
+    stream.buffered().reader().use { reader -> println(reader.readText()) }
 }
+
+/**
+ * 可空Boolean值
+ */
+fun nullable() {
+    val b: Boolean? = null
+    if (b == true) {
+        //true
+        println("b is $b")
+    } else {
+        //false or null
+        print("b is $b")
+    }
+}
+
+fun changeValue() {
+    var a = 1
+    var b = 2
+
+//    a = b.also { b = 20 }
+    a = b.also { b = a }
+    print("a= $a , b= $b")
+}
+
+fun todo() {
+    //使用todo函数标记未实现部分
+    //do something
+    TODO()
+
+    fun calcTaxes(): BigDecimal = TODO("Waiting for feedback from accounting")
+
+    print(calcTaxes())
+}
+
 
 fun main() {
 
-
-    readFiles()
-
+//    todo()
+//    changeValue()
+//    nullable()
+//    readFiles()
 //    val rectangle = Rectangle().apply {
 //        height = 10
 //        length = 20
