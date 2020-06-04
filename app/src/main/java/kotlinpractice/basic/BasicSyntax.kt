@@ -103,10 +103,10 @@ fun filter() {
     val fruits = listOf("apple", "ms", "google", "fb", "amazon")
 
     fruits
-            .filter { it.startsWith("a") }
-            .sortedBy { it }
-            .map { it.toUpperCase() }
-            .forEach { println(it) }
+        .filter { it.startsWith("a") }
+        .sortedBy { it }
+        .map { it.toUpperCase() }
+        .forEach { println(it) }
 }
 
 
@@ -117,11 +117,13 @@ abstract class Shape(val sides: List<Double>) {
     abstract fun caculateArea(): Double
 }
 
-class Rectangle(var height: Double, var length: Double) : Shape(listOf(height, length, height, length)) {
+class Rectangle(private var height: Double, private var length: Double) :
+    Shape(listOf(height, length, height, length)) {
     override fun caculateArea(): Double = height * length
 }
 
-class Triangle(var sideA: Double, var sideB: Double, var sideC: Double) : Shape(listOf(sideA, sideB, sideC)) {
+class Triangle(var sideA: Double, var sideB: Double, var sideC: Double) :
+    Shape(listOf(sideA, sideB, sideC)) {
     override fun caculateArea(): Double {
         val p = perimeter / 2
         return sqrt(p * (p - sideA) * (p - sideB) * (p - sideC))

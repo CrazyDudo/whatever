@@ -7,8 +7,9 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,7 @@ public class GpsActivity extends AppCompatActivity {
     Button btnLocation;
     @BindView(R.id.tv_result)
     TextView tvResult;
-
+    private static final String TAG = "GpsActivity";
     //定位都要通过LocationManager这个类实现
     private LocationManager locationManager;
     private String provider;
@@ -123,6 +124,7 @@ public class GpsActivity extends AppCompatActivity {
             String string = "纬度为：" + location.getLatitude() + ",经度为："
                     + location.getLongitude();
 
+            Log.d(TAG, "getLocation: "+string);
             tvResult.setText(string);
         }
 

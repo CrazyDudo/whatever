@@ -1,6 +1,5 @@
 package kotlinpractice.basic
 
-
 import java.math.BigDecimal
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -183,9 +182,10 @@ fun catAndMose(x: Int, y: Int, z: Int): String {
     }
 }
 
+
 fun main() {
 
-    catAndMose(1,2,3).print()
+//    catAndMose(1,2,3).print()
 //    todo()
 //    changeValue()
 //    nullable()

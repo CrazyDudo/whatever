@@ -18,6 +18,10 @@ public class ThreadPool {
         singleThreadPool();
     }
 
+
+
+
+
     private static void cachedThreadPool() {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i++) {
@@ -75,8 +79,6 @@ public class ThreadPool {
         }, 3, TimeUnit.SECONDS);
 
         //周期执行
-
-
         scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
             int i = 0;
 
