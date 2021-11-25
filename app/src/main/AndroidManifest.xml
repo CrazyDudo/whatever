@@ -21,19 +21,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MenuActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <provider
+            android:name=".contentprovider.testresult.BookProvider"
+            android:authorities="reoger.hut.hello.word"
+            android:exported="true"
+            />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+        <provider
+            android:name=".contentprovider.CustomContentProviderMethod"
+            android:authorities="ProgramAndroid"
+            android:exported="true" />
+
+        <activity android:name=".ui.MenuActivity">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
         <activity android:name=".wifi.WifiTestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
         <activity android:name=".handler.ThreadActivity">
 
@@ -66,11 +77,11 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
 
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+            <!--            <intent-filter>
+                            <action android:name="android.nfc.action.TAG_DISCOVERED" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+                            <category android:name="android.intent.category.DEFAULT" />
+                        </intent-filter>-->
         </activity>
         <activity android:name=".okgo.OkgoTestActivity">
 
@@ -82,11 +93,11 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".gps.GpsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
         <activity android:name=".greendao.GreenDaoTestActivity">
 
@@ -99,12 +110,12 @@
         </activity>
         <activity android:name=".permission.PermissionActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Main2Activity" />

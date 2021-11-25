@@ -56,9 +56,9 @@ dependencies {
     implementation 'com.orhanobut:logger:2.2.0'
     //okgo
     implementation 'com.lzy.net:okgo:3.0.4'
+    //content provider+shared preference
+//    implementation 'com.github.zhangliangming:PreferencesProvider:v1.3'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-
 
 }
