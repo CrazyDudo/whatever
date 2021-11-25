@@ -136,5 +136,5 @@ public class BookProvider extends ContentProvider {
             getContext().getContentResolver().notifyChange(uri, null);
         }
         return row;
-    }
-}
+                }
+                }
