@@ -1,17 +1,19 @@
 # whatever
 
-Anything about Android 
+Things about Android 
 
-- kotlin practice
+- Kotlin practice
 - RxJava,RxAndroid
 - MVP
 - handler
-- greenDao
-- nfc
+- GreenDao
+- NFC
 - permission
-- wifi
-- DI-Dagger
+- WIFI
+- DI-使用Dagger依赖注入
 - GPS
+- Content provider
+- NDK,JNI
 
 
 

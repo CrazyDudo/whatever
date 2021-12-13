@@ -21,7 +21,6 @@ public class AppApplication extends Application {
         Logger.addLogAdapter(new AndroidLogAdapter());
         //GreenDao的初始化
         GreenDaoManager.getInstance();
-
     }
 
     public static Context getContext() {

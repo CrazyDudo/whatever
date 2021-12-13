@@ -1,1 +1,2 @@
 include ':app', ':clientapp'
+include ':nativelib'
