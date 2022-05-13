@@ -40,7 +40,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     //rx
-    //    implementation "io.reactivex.rxjava2:rxjava:2.2.8"
+    //implementation "io.reactivex.rxjava2:rxjava:2.2.8"
     implementation 'io.reactivex:rxjava:1.3.8'
     //dagger2
     implementation "com.google.dagger:dagger:2.8"
@@ -50,7 +50,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     //permission
     implementation 'pub.devrel:easypermissions:2.0.1'
-    //    implementation 'com.yanzhenjie.permission:support:2.0.1'
+    //implementation 'com.yanzhenjie.permission:support:2.0.1'
     //greendao
     implementation 'org.greenrobot:greendao:3.2.2' // add library
     //log
@@ -58,8 +58,6 @@ dependencies {
     //okgo
     implementation 'com.lzy.net:okgo:3.0.4'
     //content provider+shared preference
-//    implementation 'com.github.zhangliangming:PreferencesProvider:v1.3'
-
+    //implementation 'com.github.zhangliangming:PreferencesProvider:v1.3'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
 }
