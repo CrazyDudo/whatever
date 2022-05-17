@@ -1,12 +1,15 @@
 package com.crazyduo.whatever.wifi;
 
+import android.app.Application;
 import android.content.Context;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crazyduo.whatever.R;
 
@@ -54,4 +57,29 @@ public class WifiTestActivity extends AppCompatActivity {
     }
 
 
+//    // Declaring Wi-Fi manager
+//    val wifi = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
+//
+//    // On button Click
+//        btn.setOnClickListener {
+//
+//        // wifi.isWifiEnabled is a boolean, is Wi-Fi is ON,
+//        // it switches down and vice-versa
+//        wifi.isWifiEnabled = !wifi.isWifiEnabled
+//
+//        // For displaying Wi-fi status in TextView
+//        if (!wifi.isWifiEnabled) {
+//            textView.text = "Wifi is ON"
+//        } else {
+//            textView.text = "Wifi is OFF"
+//        }
+//    }
+//
+
+
+    public void switchWifi(View view) {
+        WifiManager wifiManager= (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        wifiManager.setWifiEnabled(!wifiManager.isWifiEnabled());
+        Toast.makeText(this, "打开/关闭WIFI...", Toast.LENGTH_SHORT).show();
+    }
 }

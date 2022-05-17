@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".wifi.WifiTestActivity">
-
-    <TextView
-        android:id="@+id/tv_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="wifi mac address:" />
-
+    tools:context=".filedownload.FileDownloadActivity">
 
     <Button
-        android:text="打开/关闭WFIFI"
+        android:id="@+id/btn_single_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="switchWifi" />
+        android:text="单任务下载" />
+
+    <Button
+        android:id="@+id/btn_multi_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多任务下载" />
+
 
 </LinearLayout>

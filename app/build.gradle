@@ -60,4 +60,8 @@ dependencies {
     //content provider+shared preference
     //implementation 'com.github.zhangliangming:PreferencesProvider:v1.3'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //okdownload
+    implementation 'com.liulishuo.okdownload:okdownload:1.0.5' //核心库
+    implementation 'com.liulishuo.okdownload:sqlite:1.0.5' //存储断点信息的数据库
+    implementation 'com.liulishuo.okdownload:okhttp:1.0.5'//提供okhttp连接，如果使用的话，需要引入okhttp网络请求库
 }
