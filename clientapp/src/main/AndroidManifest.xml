@@ -9,6 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".basic.BroadcastActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +27,9 @@
         </activity>
 
         <provider
-            android:name="com.example.clientapp.preferences.TestPreferencesProvider"
+            android:name=".preferences.TestPreferencesProvider"
             android:authorities=".preferences.TestPreferencesProvider"
-            android:exported="false"></provider>
+            android:exported="false" />
     </application>
 
 </manifest>
