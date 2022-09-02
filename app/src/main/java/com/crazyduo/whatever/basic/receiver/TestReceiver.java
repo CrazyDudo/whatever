@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
+/**
+ * 接收静态广播
+ */
 public class TestReceiver extends BroadcastReceiver {
     private static final String TAG="TestReceiver";
     @Override
