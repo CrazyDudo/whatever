@@ -2,6 +2,7 @@ package com.crazyduo.whatever;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
@@ -53,5 +54,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         startActivity(new Intent(this, Main2Activity.class));
+    }
+
+    public void startLog(View view) {
+        String [] tags = {"T1","T2","T3"};
+        String [] values = {"V1","V2"};
+
+        Log.d(TAG, "startLog tags: "+TextUtils.join(",", tags));
+        Log.d(TAG, "startLog values: "+values);
+
+
     }
 }
